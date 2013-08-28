@@ -1,0 +1,23 @@
+<% provide :title, 'Calories Counter'%>
+<h1> Calories Counter: </h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(:avatar) do |f| %>
+		<%= f.label  :age%>
+		<%= f.number_field :age %>
+		<%= f.label  :weight%>
+		<%= f.number_field :weight %>
+		<%= f.label :height %>
+        <%= f.number_field :height %>
+		<%= f.label  :male%>
+		<%= f.check_box :male %>
+		<%= f.label  :activeness%>
+		<%= f.text_field :activeness %>
+		<%= f.submit "Calculate Calories", class: "btn btn-large btn-primary" %>
+		<%end%>
+	</div>
+</div>
+      
+      
+      

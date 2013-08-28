@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130827080951) do
+ActiveRecord::Schema.define(version: 20130828130817) do
+
+  create_table "avatars", force: true do |t|
+    t.integer  "age"
+    t.integer  "height"
+    t.integer  "weight"
+    t.boolean  "male"
+    t.string   "activeness"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "calories_needed"
+    t.integer  "fat_needed"
+    t.integer  "carbohydrates_needed"
+    t.integer  "proteins_needed"
+    t.integer  "alcohol_needed"
+  end
+
+  add_index "avatars", ["user_id"], name: "index_avatars_on_user_id"
 
   create_table "microposts", force: true do |t|
     t.string   "content"

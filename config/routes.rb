@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  resources :avatar, only: [:new]
   resources :users do
     member do
       get :following, :followers
