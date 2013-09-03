@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AvatarController do
+describe AvatarsController do
 
   describe "GET 'new'" do
     it "returns http success" do

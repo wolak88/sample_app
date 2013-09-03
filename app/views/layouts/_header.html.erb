@@ -20,11 +20,12 @@
                 Avatars <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to " New Avatar", new_avatar_path(current_user)%> </li>
-                <li><%= link_to "Avatar Stats", avatar_path(current_user, current_user.avatar)%> </li>
-                <li>
-                  <%= link_to "Edit Avatar", edit_avatar_path(current_user, current_user.avatar) %>
-                </li>
+                <% if current_user.avatar %>
+                    <li><%= link_to "Avatar Stats", user_avatar_path(current_user, current_user.avatar)%> </li>
+                    <li><%= link_to "Edit Avatar", edit_user_avatar_path(current_user, current_user.avatar) %></li>
+                <% else %>
+                    <li><%= link_to " New Avatar", new_user_avatar_path(current_user)%> </li>
+                <% end %>
               </ul>
             </li>
 

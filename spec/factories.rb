@@ -15,7 +15,7 @@ FactoryGirl.define do
     user
   end
 
-  factory :avatar do
+  factory :avatars do
     age 25
     height 198
     weight 100
