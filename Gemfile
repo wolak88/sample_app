@@ -41,5 +41,4 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-# need this because we use attr_accessible
-gem 'protected_attributes'
+

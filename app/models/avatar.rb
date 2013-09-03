@@ -1,7 +1,6 @@
 class Avatar < ActiveRecord::Base
 	belongs_to :user
 	before_save :calculate_calories
-	attr_accessible :calories_needed, :age, :height, :weight, :male, :activeness, :bmr, :bee, :proteins_needed, :carbohydrates_needed, :alcohol_needed
 	validates :age, presence: true
 	validates :height, presence: true
 	validates :weight, presence: true
