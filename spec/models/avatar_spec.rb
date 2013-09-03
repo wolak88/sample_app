@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Avatar do
  let(:user) { FactoryGirl.create(:user) }
-  before { @avatar = user.build_avatar(cos z factory girl?) }
+  before { @avatar = user.build_avatar(age: 11, height: 198, weight:88, male: true, activeness: 1.2) }
 
   subject { @avatar }
 
