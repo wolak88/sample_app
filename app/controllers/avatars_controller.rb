@@ -19,7 +19,14 @@ class AvatarsController < ApplicationController
   end
 
   def update
-    raise 'not implemented'
+    @avatar = current_user.avatar
+
+    if @avatar.update_attributes(avatar_params)
+      flash[:success] = "Avatar updated"
+      render 'show'
+    else
+      render 'edit'
+    end
   end
 
   def show
