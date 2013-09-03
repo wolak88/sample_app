@@ -1,0 +1,26 @@
+<% provide(:title, "Edit avatar") %>
+<h1>Update your avatar</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@avatar) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :age %>
+      <%= f.number_field :age %>
+
+      <%= f.label :height %>
+      <%= f.number_field :height %>
+
+      <%= f.label :weight %>
+      <%= f.number_field :weight %>
+
+      <%= f.label  :male%>
+    <%= f.check_box :male %>
+    <%= f.label  :activeness%>
+    <%= f.select :activeness, [["Sedentery",1.2],["Light Active", 1.375],["Moderately Active", 1.53],["Very active", 1.725],["Extra Active", 1.9]] %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -14,4 +14,13 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :avatar do
+    age 25
+    height 198
+    weight 100
+    male true
+    activeness 1.2
+  end
+
 end
