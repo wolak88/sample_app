@@ -1,16 +1,17 @@
-
 class Avatar < ActiveRecord::Base
 	belongs_to :user
 	before_save :calculate_calories
-	validates :age, presence: true
-	validates :height, presence: true
-	validates :weight, presence: true
-	validates :male, presence: true
-	validates :activeness, presence: true
+	#validates :age, presence: true
+	#validates :height, presence: true
+	#validates :weight, presence: true
+	#validates :male, presence: true
+	#validates :activeness, presence: true
 	scope :males, where(male: true)
 	
 	private
+
 	def calculate_calories
+    raise 'a'
 		if male
 			bee = 88.362+(13.397 * weight)+(4.799 * height)-(5.677 * age)
 		else
