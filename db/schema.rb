@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903083507) do
+ActiveRecord::Schema.define(version: 20130903123457) do
 
   create_table "avatars", force: true do |t|
     t.integer  "age"
     t.integer  "height"
     t.integer  "weight"
     t.boolean  "male"
-    t.integer  "activeness",           limit: 255
+    t.float    "activeness",           limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
