@@ -1,4 +1,4 @@
-class CaloriesCalculator
+class Calculators::CaloriesCalculator
 
   # all params are required : male, weight, height, age, activeness
   def self.calculate(params)
