@@ -16,7 +16,7 @@ class Avatar < ActiveRecord::Base
 
     def calculate_and_set_calories
       params = {male: self.male, weight: self.weight, height: self.height, age: self.age, activeness: self.activeness}
-      update_attributes!(Calculators::CaloriesCalculator.calculate(params))
+      update_attributes!(Calculators::Calories.calculate(params))
     end
 
 end

@@ -1,4 +1,4 @@
-class Calculators::BeeCalculator
+class Calculators::Bee
 
   # params required : male, weight, height, age
   def self.calculate(params)
