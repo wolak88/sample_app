@@ -16,16 +16,17 @@ class Avatar < ActiveRecord::Base
 
     def calculate_and_set_calories
       # 1. calculate needed bmr, bee etc.
-      bee, bmr, calories_needed, fat_needed, proteins_needed, carbohydrates_needed, alcohol_needed = CaloriesCalculator.calculate_calories(self.male, self.weight, self.height, self.age, self.activeness)
+      params = {male: self.male, weight: self.weight, height: self.height, age: self.age, activeness: self.activeness}
+      result = CaloriesCalculator.calculate_calories(params)
 
       # 2. modify Avatar
-      self.bee = bee
-      self.bmr = bmr
-      self.calories_needed = calories_needed
-      self.fat_needed = fat_needed
-      self.proteins_needed = proteins_needed
-      self.carbohydrates_needed = carbohydrates_needed
-      self.alcohol_needed = alcohol_needed
+      self.bee = result[:bee]
+      self.bmr = result[:bmr]
+      self.calories_needed = result[:calories_needed]
+      self.fat_needed = result[:fat_needed]
+      self.proteins_needed = result[:proteins_needed]
+      self.carbohydrates_needed = result[:carbohydrates_needed]
+      self.alcohol_needed = result[:alcohol_needed]
     end
 
 end
