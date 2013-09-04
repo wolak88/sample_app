@@ -23,6 +23,7 @@ class CaloriesCalculator
 
   private
 
+    # params required : male, weight, height, age
     def self.calculate_bee(params)
       bee = -1
       if params[:male]
