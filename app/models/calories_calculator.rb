@@ -1,7 +1,7 @@
 class CaloriesCalculator
 
   # all params are required : male, weight, height, age, activeness
-  def calculate_calories(params)
+  def self.calculate_calories(params)
     bee = -1
     if params[:male]
       bee = 88.362 + (13.397 * params[:weight]) + (4.799 * params[:height])-(5.677 * params[:age])
