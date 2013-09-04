@@ -15,7 +15,6 @@ class Avatar < ActiveRecord::Base
 	private
 
     def calculate_calories
-      puts "start of calculate_calories method"
       if male
         self.bee = 88.362+(13.397 * self.weight)+(4.799 * self.height)-(5.677 * self.age)
       else
@@ -27,7 +26,6 @@ class Avatar < ActiveRecord::Base
       self.proteins_needed=((self.bmr*0.25)/4).floor
       self.carbohydrates_needed=((self.bmr*0.25)/4).floor
       self.alcohol_needed=((self.bmr*0.25)/7).floor
-      puts "end of calculate_calories method"
     end
 	
 end
