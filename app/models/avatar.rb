@@ -15,12 +15,8 @@ class Avatar < ActiveRecord::Base
 	private
 
     def calculate_and_set_calories
-      # 1. calculate needed bmr, bee etc.
       params = {male: self.male, weight: self.weight, height: self.height, age: self.age, activeness: self.activeness}
-      result = CaloriesCalculator.calculate_calories(params)
-
-      # 2. modify Avatar
-      update_attributes!(result)
+      update_attributes!(CaloriesCalculator.calculate_calories(params))
     end
 
 end
