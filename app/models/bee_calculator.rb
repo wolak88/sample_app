@@ -1,7 +1,7 @@
 class BeeCalculator
 
   # params required : male, weight, height, age
-  def self.calculate_bee(params)
+  def self.calculate(params)
     if params[:male]
       88.362 + (13.397 * params[:weight]) + (4.799 * params[:height])-(5.677 * params[:age])
     else

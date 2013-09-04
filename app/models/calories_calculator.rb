@@ -2,7 +2,7 @@ class CaloriesCalculator
 
   # all params are required : male, weight, height, age, activeness
   def self.calculate(params)
-    bee = BeeCalculator.calculate_bee(params)
+    bee = BeeCalculator.calculate(params)
     bmr = bee * params[:activeness]
     calories_needed = bmr.floor
     fat_needed = ((bmr * 0.25) / 9).floor
