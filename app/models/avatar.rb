@@ -20,13 +20,7 @@ class Avatar < ActiveRecord::Base
       result = CaloriesCalculator.calculate_calories(params)
 
       # 2. modify Avatar
-      self.bee = result[:bee]
-      self.bmr = result[:bmr]
-      self.calories_needed = result[:calories_needed]
-      self.fat_needed = result[:fat_needed]
-      self.proteins_needed = result[:proteins_needed]
-      self.carbohydrates_needed = result[:carbohydrates_needed]
-      self.alcohol_needed = result[:alcohol_needed]
+      update_attributes!(result)
     end
 
 end
