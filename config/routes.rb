@@ -1,5 +1,11 @@
 SampleApp::Application.routes.draw do
 
+  get "exercises/index"
+  get "exercises/show"
+  get "exercises/new"
+  get "exercises/create"
+  get "exercises/edit"
+  get "exercises/update"
   resources :users do
     resources :avatars
     member do
