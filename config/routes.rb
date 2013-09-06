@@ -1,19 +1,8 @@
 SampleApp::Application.routes.draw do
 
-  resources :builders
 
-  resources :coaches
+  
 
-  resources :trainings
-
-  resources :exercises
-
-  get "exercises/index"
-  get "exercises/show"
-  get "exercises/new"
-  get "exercises/create"
-  get "exercises/edit"
-  get "exercises/update"
   resources :users do
     resources :avatars
     member do
@@ -23,6 +12,10 @@ SampleApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :builders, only: [:create, :destroy, :update]
+  resources :coaches, only: [:create, :destroy, :update]
+  resources :trainings
+  resources :exercises
   resources :events
   resource :calendar, :only => [:show]
   

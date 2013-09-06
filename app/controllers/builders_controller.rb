@@ -1,26 +1,7 @@
 class BuildersController < ApplicationController
   before_action :set_builder, only: [:show, :edit, :update, :destroy]
 
-  # GET /builders
-  # GET /builders.json
-  def index
-    @builders = Builder.all
-  end
-
-  # GET /builders/1
-  # GET /builders/1.json
-  def show
-  end
-
-  # GET /builders/new
-  def new
-    @builder = Builder.new
-  end
-
-  # GET /builders/1/edit
-  def edit
-  end
-
+  
   # POST /builders
   # POST /builders.json
   def create

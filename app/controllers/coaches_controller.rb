@@ -1,26 +1,7 @@
 class CoachesController < ApplicationController
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
 
-  # GET /coaches
-  # GET /coaches.json
-  def index
-    @coaches = Coach.all
-  end
-
-  # GET /coaches/1
-  # GET /coaches/1.json
-  def show
-  end
-
-  # GET /coaches/new
-  def new
-    @coach = Coach.new
-  end
-
-  # GET /coaches/1/edit
-  def edit
-  end
-
+  
   # POST /coaches
   # POST /coaches.json
   def create
