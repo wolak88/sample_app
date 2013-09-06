@@ -1,2 +1,29 @@
-<h1>Exercises#show</h1>
-<p>Find me in app/views/exercises/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise.description %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @exercise.difficulty %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @exercise.time %>
+</p>
+
+<p>
+  <strong>Imageurl:</strong>
+  <%= @exercise.imageurl %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

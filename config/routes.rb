@@ -1,5 +1,9 @@
 SampleApp::Application.routes.draw do
 
+  resources :trainings
+
+  resources :exercises
+
   get "exercises/index"
   get "exercises/show"
   get "exercises/new"
