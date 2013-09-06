@@ -1,0 +1,25 @@
+<%= form_for(@builder) do |f| %>
+  <% if @builder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@builder.errors.count, "error") %> prohibited this builder from being saved:</h2>
+
+      <ul>
+      <% @builder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exercise_id %><br>
+    <%= f.number_field :exercise_id %>
+  </div>
+  <div class="field">
+    <%= f.label :training_id %><br>
+    <%= f.number_field :training_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,9 @@
 SampleApp::Application.routes.draw do
 
+  resources :builders
+
+  resources :coaches
+
   resources :trainings
 
   resources :exercises

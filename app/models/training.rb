@@ -1,3 +1,6 @@
 class Training < ActiveRecord::Base
-	has_and_belongs_to_many :exercises
+	has_many :builders, dependent: :destroy
+	has_many :exercises, through: :builders
+	has_many :coaches
+	has_many :users, through: :coaches
 end

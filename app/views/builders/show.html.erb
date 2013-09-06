@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @builder.exercise_id %>
+</p>
+
+<p>
+  <strong>Training:</strong>
+  <%= @builder.training_id %>
+</p>
+
+<%= link_to 'Edit', edit_builder_path(@builder) %> |
+<%= link_to 'Back', builders_path %>

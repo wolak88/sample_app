@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903123457) do
+ActiveRecord::Schema.define(version: 20130906100654) do
 
   create_table "avatars", force: true do |t|
     t.integer  "age"
@@ -33,6 +33,31 @@ ActiveRecord::Schema.define(version: 20130903123457) do
 
   add_index "avatars", ["user_id"], name: "index_avatars_on_user_id"
 
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "all_day"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "difficulty"
+    t.float    "time"
+    t.string   "imageurl"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises_trainings", force: true do |t|
+    t.integer "exercises_id"
+    t.integer "trainings_id"
+  end
+
   create_table "microposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -52,6 +77,14 @@ ActiveRecord::Schema.define(version: 20130903123457) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "trainings", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "overall_difficulty"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
