@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906100654) do
+ActiveRecord::Schema.define(version: 20130906114831) do
 
   create_table "avatars", force: true do |t|
     t.integer  "age"
@@ -32,6 +32,20 @@ ActiveRecord::Schema.define(version: 20130906100654) do
   end
 
   add_index "avatars", ["user_id"], name: "index_avatars_on_user_id"
+
+  create_table "builders", force: true do |t|
+    t.integer  "exercise_id"
+    t.integer  "training_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "coaches", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "training_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "title"

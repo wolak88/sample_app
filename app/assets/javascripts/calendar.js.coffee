@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
+ready= ->
   $('#calendar').fullCalendar
     editable: true,
     header:
@@ -26,6 +26,8 @@ $(document).ready ->
     eventResize: (event, dayDelta, minuteDelta, revertFunc) ->
       updateEvent(event);
 
+$(document).ready(ready)
+$(document).on('page:load', ready)
 
 updateEvent = (the_event) ->
   $.update "/events/" + the_event.id,
