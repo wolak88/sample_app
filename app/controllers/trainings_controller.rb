@@ -1,3 +1,5 @@
+#Class for calendar
+
 class TrainingsController < ApplicationController
   before_action :set_training, only: [:show, :edit, :update, :destroy]
 

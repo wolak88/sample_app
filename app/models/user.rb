@@ -43,7 +43,15 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy!
   end
 
+  def attending?(other_training)
+    coaches.find_by(training_id: )
+  end
 
+  def attend!(training)
+  end
+
+  def unattend!
+  end
 
   private
 
